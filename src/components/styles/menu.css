@@ -1,0 +1,33 @@
+.menu-container {
+  background-color: black; 
+  width: 100vw;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 15px;
+}
+.navbar img {
+  width: 10%;
+  height: auto;
+}
+.navbar ul {
+  display: flex;
+  width: 90%;
+  justify-content: flex-end;
+}
+.navbar ul li {
+  margin: 0% 2%;
+}
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 2%;
+}
+.navbar ul li a:hover {
+  background: white;
+  color: black;
+  font-weight: 800;
+  border-radius: 10px;
+}
