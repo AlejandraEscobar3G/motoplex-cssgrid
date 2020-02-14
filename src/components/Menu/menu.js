@@ -1,10 +1,10 @@
 import React from 'react';
 
 // Styles
-import './styles/menu.css';
+import './menu.css';
 
 // Images
-import logoMotoplex from '../images/logos/logo-motoplex-negro.png';
+import logoMotoplex from '../../images/logos/logo-motoplex-negro.png';
 
 class Menu extends React.Component {
   render() {
