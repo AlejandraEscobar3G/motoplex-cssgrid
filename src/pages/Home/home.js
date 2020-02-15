@@ -25,10 +25,10 @@ class Home extends React.Component {
           </h2>
         </div>
         <div className="Home_brands">
-          <CardBrand />
-          <CardBrand />
-          <CardBrand />
-          <CardBrand />
+          <a href=""><CardBrand /></a>
+          <a href=""><CardBrand /></a>
+          <a href=""><CardBrand /></a>
+          <a href=""><CardBrand /></a>
         </div>
       </div>
     )

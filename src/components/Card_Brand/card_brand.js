@@ -9,7 +9,7 @@ class CardBrand extends React.Component {
   render() {
     return(
       <div className="card_brand">
-        adsfasdf
+        kjhkjh
       </div>
     )
   }

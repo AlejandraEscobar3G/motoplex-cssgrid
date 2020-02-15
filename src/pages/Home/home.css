@@ -1,6 +1,6 @@
 .Home_banner {
   display: grid;
-  grid-template: 1fr / 100vw;
+  grid-template: 1fr / 100%;
   height: auto;
 }
 .Home_banner img {
@@ -9,7 +9,7 @@
 .Home_text {
   margin: 3% 0%;
   display: grid;
-  grid-template: 1fr / 80vw;
+  grid-template: 1fr / 80%;
   text-align: center;
   justify-content: center;
 }
