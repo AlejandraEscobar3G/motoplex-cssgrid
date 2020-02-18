@@ -1,0 +1,26 @@
+.more_motoplex {
+  border-radius: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.more_motoplex .more_layout {
+  display: grid;
+  grid-template: 2 / 100%;
+  background-color: rgba(0,0,0,0.5);
+  height: 100%;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.more_text {
+  color: white;
+  padding: 15px;
+}
+.more_text a {
+  color: white;
+  text-decoration: none;
+}
+.more_text .link {
+  text-align: right;
+}

@@ -7,7 +7,7 @@
   width: 100%;
 }
 .Home_text {
-  margin: 3% 0%;
+  margin: 3% 0% 0% 0%;
   display: grid;
   grid-template: 1fr / 80%;
   text-align: center;
@@ -15,7 +15,15 @@
 }
 .Home_brands {
   display: grid;
-  grid-template: 1fr / repeat(4, 1fr);
-  padding: 5px;
-  column-gap: 10px;
+  grid-template: 1fr / repeat(4, 20%);
+  margin: 4% 0%;
+  column-gap: 20px;
+  justify-content: center;
+}
+.Home_motoplex {
+  display: grid;
+  grid-template: 1fr / repeat(2, 42%);
+  column-gap: 20px;
+  justify-content: center;
+  height: 500px;
 }

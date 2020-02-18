@@ -1,4 +1,15 @@
 .card_brand {
-  border: 1px solid rgb(221, 221, 221);
+  box-shadow: 0px 2px 5px 2px rgb(221, 221, 221);
   border-radius: 10px;
+  padding: 10px;
+}
+.card_brand img {
+  display: block;
+  margin: auto;
+}
+.card_brand img.card_brand_logo {
+  width: 70%;
+}
+.card_brand img.card_brand_model {
+  width: 100%;
 }

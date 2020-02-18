@@ -9,7 +9,8 @@ class CardBrand extends React.Component {
   render() {
     return(
       <div className="card_brand">
-        kjhkjh
+        <img className="card_brand_logo" src={this.props.cardLogo} alt="logo"/>
+        <img className="card_brand_model" src={this.props.cardModel} alt="Model"/>
       </div>
     )
   }
