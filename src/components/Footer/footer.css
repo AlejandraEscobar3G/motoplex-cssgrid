@@ -1,0 +1,23 @@
+.footer_container {
+  width: 100%;
+  text-align: center;
+  margin-top: 5%;
+  background: black;
+}
+.footer_container p {
+  background: white;
+  margin: 0%;
+  padding: 1%;
+  font-weight: bold;
+}
+.footer_brands {
+  display: grid;
+  grid-template: 1fr / repeat(4, 10%);
+  column-gap: 15px;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+.footer_brands img {
+  width: 100%;
+}

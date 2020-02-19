@@ -7,19 +7,23 @@ import './more_motoplex.css';
 
 class MoreMotoplex extends React.Component {
   render() {
-    let motoplex_background = {
-      backgroundImage: `url(${this.props.motoplexBackground})`
-    }
+    const more_motoplex = this.props.infoMotoplex;
+    let motoplex_background = {}
     return(
-      <div className="more_motoplex" style={motoplex_background}>
-        <div className="more_layout">
-          <div className="more_text">
-            <h3>{this.props.infoMotoplex.title}</h3>
-            <p>{this.props.infoMotoplex.description}</p>
-            <div className="link"><a href={this.props.infoMotoplex.redirection} >{this.props.infoMotoplex.anchor}</a></div>
-          </div>
-        </div>
-      </div>
+      more_motoplex.map(data => {
+        motoplex_background = { backgroundImage: `url(${data.background})` }
+        return(
+          <div className="more_motoplex" style={motoplex_background} key={data.id}>
+            <div className="more_layout">
+              <div className="more_text">
+                <h3>{data.title}</h3>
+                <p>{data.description}</p>
+                <div className="link"><a href={data.redirection} >{data.anchor}</a></div>
+              </div>
+            </div>
+          </div>  
+        )
+      })
     )
   }
 }

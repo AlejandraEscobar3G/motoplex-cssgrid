@@ -7,11 +7,18 @@ import './card_brand.css';
 
 class CardBrand extends React.Component {
   render() {
+    const card_brand = this.props.cardData;
     return(
-      <div className="card_brand">
-        <img className="card_brand_logo" src={this.props.cardLogo} alt="logo"/>
-        <img className="card_brand_model" src={this.props.cardModel} alt="Model"/>
-      </div>
+      card_brand.map(data => {
+        return(
+          <a href={data.redirection} key={data.id}>
+            <div className="card_brand">
+              <img className="card_brand_logo" src={data.logo} alt="logo"/>
+              <img className="card_brand_model" src={data.model} alt="Model"/>
+            </div>
+          </a>
+        )
+      })
     )
   }
 }

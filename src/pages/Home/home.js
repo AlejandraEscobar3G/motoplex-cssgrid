@@ -4,6 +4,7 @@ import React from 'react';
 import Menu from '../../components/Menu/menu';
 import CardBrand from '../../components/Card_Brand/card_brand';
 import MoreMotoplex from '../../components/More_Motoplex/more_motoplex';
+import Footer from '../../components/Footer/footer';
 
 // Styles
 import './home.css';
@@ -23,18 +24,50 @@ import distribuidor from '../../images/defaults/busca-distribuidor.jpg';
 
 class Home extends React.Component {
   render() {
-    let experiencia = {
-      title: 'EXPERIENCIA MOTOPLEX',
-      description: 'Lo que nos mueve es generar en cada uno de nuestros clientes, la satisfacción de haber llegado al mejor lugar para vivir su pasión por el motociclismo. Por eso, nuestra meta de cada día es ofrecer un servicio innovador,profesional y auténtico.',
-      anchor: 'MÁS DE MOTOPLEX',
-      redirection: '#'
-    }
-    let distribuidores = {
-      title: 'NUESTROS DISTRIBUIDORES',
-      description: 'Tu camino comienza en Motoplex. Por eso, ponemos a tu disposición nuestras sucursales con cobertura nacional en México. Encuentra la tuya y visítanos para que nunca dejes que algo detenga tu pasión por el motociclismo.',
-      anchor: 'NUESTROS DISTRIBUIDORES',
-      redirection: '#'
-    }
+    const card_brand = [
+      {
+        id: 1,
+        model: `${cardModelPiaggio}`,
+        logo: `${cardLogoPiaggio}`,
+        redirection: '#'
+      },
+      {
+        id: 2,
+        model: `${cardModelVespa}`,
+        logo: `${cardLogoVespa}`,
+        redirection: '#'
+      },
+      {
+        id: 3,
+        model: `${cardModelAprilia}`,
+        logo: `${cardLogoAprilia}`,
+        redirection: '#'
+      },
+      {
+        id: 4,
+        model: `${cardModelGuzzi}`,
+        logo: `${cardLogoGuzzi}`,
+        redirection: '#'
+      }
+    ];
+    const more_motoplex = [
+      {
+        id: 1,
+        title: 'EXPERIENCIA MOTOPLEX',
+        description: 'Lo que nos mueve es generar en cada uno de nuestros clientes, la satisfacción de haber llegado al mejor lugar para vivir su pasión por el motociclismo. Por eso, nuestra meta de cada día es ofrecer un servicio innovador,profesional y auténtico.',
+        anchor: 'MÁS DE MOTOPLEX',
+        redirection: '#',
+        background: `${experienciaMotoplex}`
+      },
+      {
+        id: 2,
+        title: 'NUESTROS DISTRIBUIDORES',
+        description: 'Tu camino comienza en Motoplex. Por eso, ponemos a tu disposición nuestras sucursales con cobertura nacional en México. Encuentra la tuya y visítanos para que nunca dejes que algo detenga tu pasión por el motociclismo.',
+        anchor: 'NUESTROS DISTRIBUIDORES',
+        redirection: '#',
+        background: `${distribuidor}`
+      }
+    ];
     return (
       <div>
         <Menu />
@@ -48,15 +81,12 @@ class Home extends React.Component {
           </h2>
         </div>
         <div className="Home_brands">
-          <a href=""><CardBrand cardModel={cardModelPiaggio} cardLogo={cardLogoPiaggio} /></a>
-          <a href=""><CardBrand cardModel={cardModelVespa} cardLogo={cardLogoVespa} /></a>
-          <a href=""><CardBrand cardModel={cardModelAprilia} cardLogo={cardLogoAprilia} /></a>
-          <a href=""><CardBrand cardModel={cardModelGuzzi} cardLogo={cardLogoGuzzi} /></a>
+          <CardBrand cardData={card_brand} />
         </div>
         <div className="Home_motoplex">
-          <MoreMotoplex motoplexBackground={experienciaMotoplex} infoMotoplex={experiencia} />
-          <MoreMotoplex motoplexBackground={distribuidor} infoMotoplex={distribuidores} />
+          <MoreMotoplex infoMotoplex={more_motoplex} />
         </div>
+        <Footer />
       </div>
     )
   }
