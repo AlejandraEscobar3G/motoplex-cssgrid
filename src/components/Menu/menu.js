@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Components
+import { Link } from 'react-router-dom';
+
 // Styles
 import './menu.css';
 
@@ -13,8 +16,8 @@ class Menu extends React.Component {
         <nav className="navbar">
           <img src={logoMotoplex} alt="Logo Motoplex"/>
           <ul>
-            <li><a href="">Distribuidores</a></li>
-            <li><a href="">Nuestras Marcas</a></li>
+            <li><Link to="distribuidores">Distribuidores</Link></li>
+            <li><Link to="marcas">Nuestras Marcas</Link></li>
             <li>
               <a href="https://www.facebook.com/">Facebook</a>
               <a href="https://twitter.com/">Twitter</a>
