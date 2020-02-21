@@ -15,18 +15,22 @@ class Footer extends React.Component {
   render() {
     const logosFooter = [
       {
+        id: 1,
         src:`${logoPiaggio}`,
         alt:'Piaggio Logo'
       },
       {
+        id: 2,
         src:`${logoVespa}`,
         alt:'Vespa Logo'
       },
       {
+        id: 3,
         src:`${logoAprilia}`,
         alt:'Aprilia Logo'
       },
       {
+        id: 4,
         src:`${logoGuzzi}`,
         alt:'Moto Guzzi Logo'
       },
@@ -38,7 +42,7 @@ class Footer extends React.Component {
           {
             logosFooter.map(data => {
               return(
-                <img src={data.src} alt={data.alt}/>
+                <img src={data.src} key={data.id} alt={data.alt}/>
               )
             })
           }

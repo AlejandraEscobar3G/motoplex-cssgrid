@@ -1,8 +1,14 @@
 import React from 'react';
 import api from '../../api';
 
+// Components
+import Menu from '../../components/Menu/menu';
+
 // Styles
 import './dealers.css';
+
+// Images
+import dealerDefault from '../../images/defaults/motoplex-distribuidor-default.jpg';
 
 class Dealers extends React.Component {
   state = {
@@ -38,7 +44,12 @@ class Dealers extends React.Component {
     }
     console.log(this.state.data);
     return(
-      <h1>Hola mundo</h1>
+      <React.Fragment>
+        <Menu />
+        <div className="Dealers_banner">
+          <img src={dealerDefault} alt="Motoplex Banner"/>
+        </div>
+      </React.Fragment>
     );
   };
 }

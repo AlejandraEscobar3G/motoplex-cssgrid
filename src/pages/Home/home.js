@@ -64,7 +64,7 @@ class Home extends React.Component {
         title: 'NUESTROS DISTRIBUIDORES',
         description: 'Tu camino comienza en Motoplex. Por eso, ponemos a tu disposición nuestras sucursales con cobertura nacional en México. Encuentra la tuya y visítanos para que nunca dejes que algo detenga tu pasión por el motociclismo.',
         anchor: 'NUESTROS DISTRIBUIDORES',
-        redirection: '#',
+        redirection: 'distribuidores',
         background: `${distribuidor}`
       }
     ];

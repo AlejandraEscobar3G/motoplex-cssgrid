@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Styles
 import './more_motoplex.css';
@@ -18,7 +19,7 @@ class MoreMotoplex extends React.Component {
               <div className="more_text">
                 <h3>{data.title}</h3>
                 <p>{data.description}</p>
-                <div className="link"><a href={data.redirection} >{data.anchor}</a></div>
+                <div className="link"><Link to={data.redirection} >{data.anchor}</Link></div>
               </div>
             </div>
           </div>  
