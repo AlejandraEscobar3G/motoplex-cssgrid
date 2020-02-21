@@ -3,6 +3,7 @@ import api from '../../api';
 
 // Components
 import Menu from '../../components/Menu/menu';
+import CardDealer from '../../components/Card_Dealer/card_dealer';
 
 // Styles
 import './dealers.css';
@@ -48,6 +49,17 @@ class Dealers extends React.Component {
         <Menu />
         <div className="Dealers_banner">
           <img src={dealerDefault} alt="Motoplex Banner"/>
+        </div>
+        <div className="Dealer_select">
+          <select name="dealer_select" id="dealer_select">
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+          </select>
+        </div>
+        <div className="Dealer_card">
+          <CardDealer />
         </div>
       </React.Fragment>
     );
