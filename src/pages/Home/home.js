@@ -69,7 +69,7 @@ class Home extends React.Component {
       }
     ];
     return (
-      <div>
+      <React.Fragment>
         <Menu />
         <div className="Home_banner">
           <img src={bannerHome} alt="Motoplex Banner"/>
@@ -87,7 +87,7 @@ class Home extends React.Component {
           <MoreMotoplex infoMotoplex={more_motoplex} />
         </div>
         <Footer />
-      </div>
+      </React.Fragment>
     )
   }
 }

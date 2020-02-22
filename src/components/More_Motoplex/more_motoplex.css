@@ -6,7 +6,7 @@
 }
 .more_motoplex .more_layout {
   display: grid;
-  grid-template: 2 / 100%;
+  grid-template: 1 / 100%;
   background-color: rgba(0,0,0,0.5);
   height: 100%;
   border-radius: 10px;

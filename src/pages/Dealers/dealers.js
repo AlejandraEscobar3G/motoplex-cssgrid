@@ -40,6 +40,7 @@ class Dealers extends React.Component {
   }
 
   render() {
+    let dealers_background = { backgroundImage: `url(${dealerDefault})` }
     if (this.state.loading) {
       return 'Loading...'
     }
@@ -47,18 +48,17 @@ class Dealers extends React.Component {
     return(
       <React.Fragment>
         <Menu />
-        <div className="Dealers_banner">
-          <img src={dealerDefault} alt="Motoplex Banner"/>
+        <div className="Dealers_banner" style={ dealers_background }>
+          <div className="Dealers_layout">
+            <select name="dealer_select" id="dealer_select">
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+            </select>
+          </div>
         </div>
-        <div className="Dealer_select">
-          <select name="dealer_select" id="dealer_select">
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-          </select>
-        </div>
-        <div className="Dealer_card">
+        <div className="Dealers_card">
           <CardDealer />
         </div>
       </React.Fragment>
