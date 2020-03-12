@@ -19,22 +19,23 @@ class Dealers extends React.Component {
     this.state = {
       loading: true,
       error: null,
-      data: undefined
+      data: undefined,
+      states: undefined
     }
   }
 
   componentDidMount() {
-    this.fetchData();
-  }
-
-  fetchData = async () => {
     this.setState({
       loading: true,
       error: null
     });
+    this.fetchData();
+  }
 
+  fetchData = async () => {
     try {
       const data = await api.dealers.getDealers();
+      this.getStates(data);
       this.setState({ loading: false, data: data });
     } catch (error) {
       this.setState({
@@ -42,6 +43,12 @@ class Dealers extends React.Component {
         data: error
       });
     }
+  }
+
+  getStates = (data) => {
+    let statesList = data.map(element => element.state);
+    //statesList.unique();
+    console.log(statesList);
   }
 
   render() {
