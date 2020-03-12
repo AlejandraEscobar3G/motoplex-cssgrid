@@ -4,6 +4,7 @@ import api from '../../api';
 // Components
 import Menu from '../../components/Menu/menu';
 import CardDealer from '../../components/Card_Dealer/card_dealer';
+import DealersLocations from '../../components/Dealers_Locations/dealers_locations';
 
 // Styles
 import './dealers.css';
@@ -12,10 +13,14 @@ import './dealers.css';
 import dealerDefault from '../../images/defaults/motoplex-distribuidor-default.jpg';
 
 class Dealers extends React.Component {
-  state = {
-    loading: true,
-    error: null,
-    data: undefined
+  constructor(props) {
+    super(props);
+    this.backgroundImage = { backgroundImage: `url(${dealerDefault})` };
+    this.state = {
+      loading: true,
+      error: null,
+      data: undefined
+    }
   }
 
   componentDidMount() {
@@ -40,7 +45,6 @@ class Dealers extends React.Component {
   }
 
   render() {
-    let dealers_background = { backgroundImage: `url(${dealerDefault})` }
     if (this.state.loading) {
       return 'Loading...'
     }
@@ -48,14 +52,9 @@ class Dealers extends React.Component {
     return(
       <React.Fragment>
         <Menu />
-        <div className="Dealers_banner" style={ dealers_background }>
+        <div className="Dealers_banner" style={ this.backgroundImage }>
           <div className="Dealers_layout">
-            <select name="dealer_select" id="dealer_select">
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-            </select>
+            <DealersLocations />
           </div>
         </div>
         <div className="Dealers_card">
