@@ -16,11 +16,18 @@ class Dealers extends React.Component {
   constructor(props) {
     super(props);
     this.backgroundImage = { backgroundImage: `url(${dealerDefault})` };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.fetchData = this.fetchData.bind(this);
+    this.getAvailableStates = this.getAvailableStates.bind(this);
+    this.filterStates = this.filterStates.bind(this);
+
     this.state = {
       loading: true,
       error: null,
       data: undefined,
-      states: undefined,
+      filteredData: undefined,
+      availableStates: undefined,
       selectedState: 'Todos los distribuidores'
     }
   }
@@ -36,7 +43,12 @@ class Dealers extends React.Component {
   fetchData = async () => {
     try {
       const data = await api.dealers.getDealers();
-      this.setState({ loading: false, data: data, states: this.getAvailableStates(data) });
+      this.setState({ 
+        loading: false,
+        data: data,
+        filteredData: data,
+        availableStates: this.getAvailableStates(data)
+      });
     } catch (error) {
       this.setState({
         loading: false,
@@ -56,9 +68,20 @@ class Dealers extends React.Component {
     );
   }
 
+  filterStates = (event) => {
+    return(
+      this.state.data.filter(element => {
+        return element.state === event;
+      })
+    );
+  }
+
   handleChange = (event) => {
+    let filteredStates = (event.target.value === 'Todos los distribuidores') ? this.state.data : this.filterStates(event.target.value);
+
     this.setState({
-      selectedState: event.target.value
+      selectedState: event.target.value,
+      filteredData: filteredStates
     })
   }
 
@@ -71,11 +94,11 @@ class Dealers extends React.Component {
         <Menu />
         <div className="Dealers_banner" style={ this.backgroundImage }>
           <div className="Dealers_layout">
-            <DealersLocations availableStates={this.state.states} selectedState={this.state.selectedState} onChange={this.handleChange} />
+            <DealersLocations availableStates={this.state.availableStates} selectedState={this.state.selectedState} onChange={this.handleChange} />
           </div>
         </div>
         <div className="Dealers_card">
-          <CardDealer />
+          <CardDealer filteredDealers={this.state.filteredData} />
         </div>
       </React.Fragment>
     );
