@@ -20,7 +20,8 @@ class Dealers extends React.Component {
       loading: true,
       error: null,
       data: undefined,
-      states: undefined
+      states: undefined,
+      selectedState: 'Todos los distribuidores'
     }
   }
 
@@ -35,8 +36,7 @@ class Dealers extends React.Component {
   fetchData = async () => {
     try {
       const data = await api.dealers.getDealers();
-      this.getStates(data);
-      this.setState({ loading: false, data: data });
+      this.setState({ loading: false, data: data, states: this.getAvailableStates(data) });
     } catch (error) {
       this.setState({
         loading: false,
@@ -45,23 +45,33 @@ class Dealers extends React.Component {
     }
   }
 
-  getStates = (data) => {
+  getAvailableStates = (data) => {
     let statesList = data.map(element => element.state);
-    //statesList.unique();
-    console.log(statesList);
+    statesList = Array.from(new Set(statesList));
+    statesList.unshift('Todos los distribuidores');
+    return(
+      statesList.map((element, index) => {
+        return({id: ++index, state: element});
+      })
+    );
+  }
+
+  handleChange = (event) => {
+    this.setState({
+      selectedState: event.target.value
+    })
   }
 
   render() {
     if (this.state.loading) {
       return 'Loading...'
     }
-    console.log(this.state.data);
     return(
       <React.Fragment>
         <Menu />
         <div className="Dealers_banner" style={ this.backgroundImage }>
           <div className="Dealers_layout">
-            <DealersLocations />
+            <DealersLocations availableStates={this.state.states} selectedState={this.state.selectedState} onChange={this.handleChange} />
           </div>
         </div>
         <div className="Dealers_card">
