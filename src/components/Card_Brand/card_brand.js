@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Styles
 import './card_brand.css';
@@ -11,12 +12,12 @@ class CardBrand extends React.Component {
     return(
       card_brand.map(data => {
         return(
-          <a href={data.redirection} key={data.id}>
+          <Link href={data.redirection} key={data.id}>
             <div className="card_brand">
               <img className="card_brand_logo" src={data.logo} alt="logo"/>
               <img className="card_brand_model" src={data.model} alt="Model"/>
             </div>
-          </a>
+          </Link>
         )
       })
     )
