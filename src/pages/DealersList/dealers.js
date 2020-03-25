@@ -42,7 +42,7 @@ class Dealers extends React.Component {
 
   fetchData = async () => {
     try {
-      const data = await api.dealers.getDealers();
+      const data = await api.dealers.getDealersList();
       this.setState({ 
         loading: false,
         data: data,
@@ -52,7 +52,7 @@ class Dealers extends React.Component {
     } catch (error) {
       this.setState({
         loading: false,
-        data: error
+        error: error
       });
     }
   }

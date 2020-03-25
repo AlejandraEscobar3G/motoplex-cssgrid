@@ -16,10 +16,10 @@ async function callApi(endpoint, options = {}) {
 
 const api = {
   dealers: {
-    getDealers() {
+    getDealersList() {
       return callApi('get/stores');
     },
-    create(badge) {
+    getDealer(dealerId) {
       return callApi(`/badges`, {
         method: 'POST',
         body: JSON.stringify(badge),

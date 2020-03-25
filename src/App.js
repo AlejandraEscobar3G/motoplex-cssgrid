@@ -16,11 +16,11 @@ function App() {
     <BrowserRouter>
       <div>
         <Switch>
-          <Route exact path="/"><Home /></Route>
-          <Route exact path="/distribuidores"><DealersList /></Route>
-          <Route exact path="/distribuidores/:id" children={<Dealer />} />
-          <Route exact path="/marcas"><Brands /></Route>
-          <Route exact path="*"><NotFound /></Route>
+          <Route exact path="/" component={ Home } />
+          <Route exact path="/distribuidores" component={ DealersList } />
+          <Route exact path="/distribuidores/:dealerId" component={ Dealer } />
+          <Route exact path="/marcas" component={ Brands } />
+          <Route exact path="*" component={ NotFound } />
         </Switch>
       </div>
     </BrowserRouter>
