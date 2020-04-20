@@ -12,7 +12,7 @@ class CardBrand extends React.Component {
     return(
       card_brand.map(data => {
         return(
-          <Link href={data.redirection} key={data.id}>
+          <Link to={data.redirection} key={data.id}>
             <div className="card_brand">
               <img className="card_brand_logo" src={data.logo} alt="logo"/>
               <img className="card_brand_model" src={data.model} alt="Model"/>

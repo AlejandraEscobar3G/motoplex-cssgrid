@@ -23,7 +23,7 @@ class Dealer extends React.Component {
 
   fetchData = async () => {
     try {
-      const data = await api.dealers.getDealer({id: 'merida'});
+      const data = await api.dealers.getDealer({id: this.dealerId});
       console.log(data);
       this.setState({ 
         loading: false,

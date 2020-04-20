@@ -1,14 +1,13 @@
 const BASE_URL = 'http://localhost:8888/motoplex/cms/api/';
 
 async function callApi(endpoint, options = {}) {
-
   options.headers = {
     'Content-Type': 'application/json',
     'Accept': 'application/json'
   };
 
   const url = BASE_URL + endpoint;
-  const response = await fetch(url);
+  const response = await fetch(url, options);
   const data = await response.json();
 
   return data;
@@ -19,10 +18,10 @@ const api = {
     getDealersList() {
       return callApi('get/stores');
     },
-    getDealer(dealerId) {
-      return callApi(`/badges`, {
+    getDealer(requestParams) {
+      return callApi('get/store', {
         method: 'POST',
-        body: JSON.stringify(badge),
+        body: JSON.stringify( requestParams ),
       });
     },
     read(badgeId) {
